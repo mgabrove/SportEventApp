@@ -1,13 +1,10 @@
 package hr.java.sport.event.sporteventapp.repository;
-
 import hr.java.sport.event.sporteventapp.domain.Club;
 import lombok.AllArgsConstructor;
-import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 @Repository
@@ -19,11 +16,8 @@ public class JdbcClubRepository implements ClubRepository {
 
     @Override
     public List<Club> findAll() {
-        List<Club> allClubs =
-                jdbcTemplate.query("SELECT * FROM CLUB",
+        return jdbcTemplate.query("SELECT * FROM CLUB",
                         BeanPropertyRowMapper.newInstance(Club.class));
-
-        return allClubs;
     }
 
     @Override

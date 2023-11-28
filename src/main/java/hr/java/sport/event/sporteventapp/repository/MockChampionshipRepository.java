@@ -24,12 +24,6 @@ public class MockChampionshipRepository implements ChampionshipRepository {
     }
     @Override
     public List<Championship> findAll() {
-        /*
-        for(Championship championship : championshipList) {
-            championship.setClubList(clubRepository.findAll());
-        }
-
-         */
         return championshipList;
     }
 }

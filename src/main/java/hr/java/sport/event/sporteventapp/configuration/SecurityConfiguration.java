@@ -47,7 +47,7 @@ public class SecurityConfiguration {
                         .defaultSuccessUrl("/welcome", true)
                         .failureUrl("/login.html?error=true")
                 )
-                .logout((logout) ->
+                .logout(logout ->
                         logout
                                 .deleteCookies("remove")
                                 .invalidateHttpSession(false)

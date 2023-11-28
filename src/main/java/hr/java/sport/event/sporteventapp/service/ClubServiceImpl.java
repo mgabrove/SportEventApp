@@ -1,11 +1,8 @@
 package hr.java.sport.event.sporteventapp.service;
-
 import hr.java.sport.event.sporteventapp.domain.Club;
-import hr.java.sport.event.sporteventapp.repository.ClubRepository;
 import hr.java.sport.event.sporteventapp.repository.SpringClubRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 

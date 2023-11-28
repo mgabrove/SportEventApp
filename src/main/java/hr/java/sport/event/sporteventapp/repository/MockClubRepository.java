@@ -1,10 +1,7 @@
 package hr.java.sport.event.sporteventapp.repository;
-
 import hr.java.sport.event.sporteventapp.domain.Championship;
 import hr.java.sport.event.sporteventapp.domain.Club;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -16,9 +13,6 @@ public class MockClubRepository implements ClubRepository {
     private static List<Club> championshipClubs = new ArrayList<>();
 
     static {
-
-        Championship championship = new Championship(1, "HNL", new ArrayList<>());
-
         Club firstClub = new Club(1, "Dinamo Zagreb");
         Club secondClub = new Club(2, "HNK Rijeka");
 
