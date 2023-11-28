@@ -8,8 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -32,7 +30,12 @@ public class WelcomePageController {
         List<Championship> championshipList =
                 championshipService.getChampionships();
 
-        Club clubForEdit = clubService.findById(id).get();
+
+        Club clubForEdit = null;
+        var tempClub = clubService.findById(id);
+        if(tempClub.isPresent()) {
+            clubForEdit = tempClub.get();
+        }
 
         model.addAttribute("championshipList", championshipList);
         model.addAttribute("club", clubForEdit);
